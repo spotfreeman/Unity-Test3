@@ -5,6 +5,12 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour
 {
 
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -27,6 +33,9 @@ public class PlayerAction : MonoBehaviour
     void PrimaryAction()
     {
         Debug.Log("Primary Accion");
+        animator.SetBool("Attack_Up", true);
+        
+
     }
 
     void SecondAction()

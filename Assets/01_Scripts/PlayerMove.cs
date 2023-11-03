@@ -25,6 +25,7 @@ public class PlayerMove : MonoBehaviour
 
         animator.SetFloat("MovX", movX);
         animator.SetFloat("MovY", movY);
+
         if(movX != 0 || movY != 0)
         {
             animator.SetFloat("LastX", movX);
