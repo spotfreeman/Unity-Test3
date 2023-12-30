@@ -34,8 +34,6 @@ public class PlayerAction : MonoBehaviour
     {
         Debug.Log("Primary Accion");
         animator.SetBool("Attack_Up", true);
-        
-
     }
 
     void SecondAction()
