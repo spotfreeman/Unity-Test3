@@ -32,24 +32,70 @@ public class PlayerShooting : MonoBehaviour
     void Shoot()
     {
         float bulletStatus = playeritem.bullets;
+        int weapon = playeritem.weaponActive;
 
-        if (bulletStatus > 0)
+
+        if (weapon == 1)
         {
+            if (bulletStatus > 0)
+            {
 
-            playeritem.ShootBullet(ShootDiscount);
+                playeritem.ShootBullet(ShootDiscount);
 
-            // Convertir la posición del mouse de coordenadas de pantalla a coordenadas del mundo
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 shootingDirection = (mousePosition - transform.position).normalized;
+                // Convertir la posición del mouse de coordenadas de pantalla a coordenadas del mundo
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 shootingDirection = (mousePosition - transform.position).normalized;
 
-            // Ignora la componente z para disparos en 2D
-            // shootingDirection.z = 0;
+                // Ignora la componente z para disparos en 2D
+                // shootingDirection.z = 0;
 
-            // Crea el proyectil en la posición del jugador
-            GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            // Asigna la velocidad al proyectil en la dirección calculada
-            projectile.GetComponent<Rigidbody2D>().velocity = shootingDirection * projectileSpeed;
+                // Crea el proyectil en la posición del jugador
+                GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                // Asigna la velocidad al proyectil en la dirección calculada
+                projectile.GetComponent<Rigidbody2D>().velocity = shootingDirection * projectileSpeed;
+            }
         }
+        if (weapon == 2)
+        {
+            if (bulletStatus > 0)
+            {
+
+                playeritem.ShootBullet(ShootDiscount);
+
+                // Convertir la posición del mouse de coordenadas de pantalla a coordenadas del mundo
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 shootingDirection = (mousePosition - transform.position).normalized;
+
+                // Ignora la componente z para disparos en 2D
+                // shootingDirection.z = 0;
+
+                // Crea el proyectil en la posición del jugador
+                GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                // Asigna la velocidad al proyectil en la dirección calculada
+                projectile.GetComponent<Rigidbody2D>().velocity = shootingDirection * projectileSpeed;
+            }
+        }
+        if (weapon == 2)
+        {
+            if (bulletStatus > 0)
+            {
+
+                playeritem.ShootBullet(ShootDiscount);
+
+                // Convertir la posición del mouse de coordenadas de pantalla a coordenadas del mundo
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 shootingDirection = (mousePosition - transform.position).normalized;
+
+                // Ignora la componente z para disparos en 2D
+                // shootingDirection.z = 0;
+
+                // Crea el proyectil en la posición del jugador
+                GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                // Asigna la velocidad al proyectil en la dirección calculada
+                projectile.GetComponent<Rigidbody2D>().velocity = shootingDirection * projectileSpeed;
+            }
+        }
+
         else
         {
             Debug.Log("Sin Munucion!!!");

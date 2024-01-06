@@ -10,6 +10,12 @@ public class PlayerItems : MonoBehaviour
     public float bullets;
     [SerializeField] private TextMeshProUGUI textBullet;
 
+    public float bulletsRifle;
+    [SerializeField] private TextMeshProUGUI textRifle;
+
+    public float bulletsShootgun;
+    [SerializeField] private TextMeshProUGUI textShootgun;
+
     public float health;
     [SerializeField] private TextMeshProUGUI textHealth;
 
@@ -21,6 +27,8 @@ public class PlayerItems : MonoBehaviour
     public Image weaponOneImg;
     public Image weaponTwoImg;
     public Image weaponTreeImg;
+
+    public int weaponActive;
 
 
 
@@ -38,11 +46,8 @@ public class PlayerItems : MonoBehaviour
 
     private void Update()
     {
-
-
         textBullet.text = bullets.ToString("0");
         textHealth.text = health.ToString("0");
-
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -66,7 +71,14 @@ public class PlayerItems : MonoBehaviour
         if( weaponOneImg != null)
         {
             weaponOneImg.color = Color.green;
+            weaponTwoImg.color = Color.grey;
+            weaponTreeImg.color = Color.grey;
+
+            weaponActive = 1;
+
             weaponOne = true;
+            weaponTwo = false;
+            weaponTree = false;
         }
     }
 
@@ -74,8 +86,15 @@ public class PlayerItems : MonoBehaviour
     {
         if( weaponTwoImg != null)
         {
+            weaponOneImg.color = Color.grey;
             weaponTwoImg.color = Color.green;
+            weaponTreeImg.color = Color.grey;
+
+            weaponActive = 2;
+
+            weaponOne = false;
             weaponTwo = true;
+            weaponTree = false;
         }
     }
 
@@ -83,7 +102,14 @@ public class PlayerItems : MonoBehaviour
     {
         if( weaponTreeImg != null)
         {
+            weaponOneImg.color = Color.grey;
+            weaponTwoImg.color = Color.grey;
             weaponTreeImg.color = Color.green;
+
+            weaponActive = 3;
+
+            weaponOne = false;
+            weaponTwo = false;
             weaponTree = true;
         }
     }
