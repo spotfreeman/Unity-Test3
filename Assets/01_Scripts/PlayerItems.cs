@@ -36,7 +36,8 @@ public class PlayerItems : MonoBehaviour
     {
         //    textBullet = GetComponent<TextMeshProUGUI>();
         //    textHealth = GetComponent<TextMeshProUGUI>();
-        health = 50f;
+        
+        
         weaponCero = true;
         weaponOne = false;
         weaponTwo = false;
@@ -46,8 +47,12 @@ public class PlayerItems : MonoBehaviour
 
     private void Update()
     {
+        float health = GameManager.Instance.health;
+
         textBullet.text = bullets.ToString("0");
         textHealth.text = health.ToString("0");
+        textRifle.text = bulletsRifle.ToString("0");
+        textShootgun.text = bulletsShootgun.ToString("0");
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -126,9 +131,6 @@ public class PlayerItems : MonoBehaviour
         bullets -= bulletsShoots;
     }
 
-
-
-
     public void HealthCount(float healthTaken)
     {
         health += healthTaken;
@@ -138,5 +140,7 @@ public class PlayerItems : MonoBehaviour
     {
         health -= healthDamage;
     }
+
+
 
 }

@@ -75,7 +75,7 @@ public class PlayerShooting : MonoBehaviour
                 projectile.GetComponent<Rigidbody2D>().velocity = shootingDirection * projectileSpeed;
             }
         }
-        if (weapon == 2)
+        if (weapon == 3)
         {
             if (bulletStatus > 0)
             {
@@ -99,6 +99,7 @@ public class PlayerShooting : MonoBehaviour
         else
         {
             Debug.Log("Sin Munucion!!!");
+            
         }
 
 

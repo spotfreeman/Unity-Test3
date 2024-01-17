@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
 
-    [SerializeField] private float speedMovement;
     [SerializeField] private Vector2 direction;
 
     private Rigidbody2D playerRb;
@@ -36,6 +35,8 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerRb.MovePosition(playerRb.position + direction * speedMovement * Time.fixedDeltaTime);
+        float moveSpeed = GameManager.Instance.moveSpeed;
+
+        playerRb.MovePosition(playerRb.position + direction * moveSpeed * Time.fixedDeltaTime);
     }
 }
