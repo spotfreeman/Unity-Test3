@@ -127,7 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a903db4d08b14153a9563f4af920eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMovement: 3
   direction: {x: 0, y: 0}
 --- !u!114 &1100093340722895483
 MonoBehaviour:
@@ -240,7 +239,7 @@ GameObject:
   - component: {fileID: 310221687750475624}
   - component: {fileID: 9182073518289136253}
   - component: {fileID: 2457155166358334670}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CircleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +359,7 @@ GameObject:
   - component: {fileID: 5565931598166439476}
   - component: {fileID: 6208681067746373958}
   - component: {fileID: 179875247434688888}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CircleUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +479,7 @@ GameObject:
   - component: {fileID: 4989934453900611076}
   - component: {fileID: 7651217288008052449}
   - component: {fileID: 6665086297793682313}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CircleDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +599,7 @@ GameObject:
   - component: {fileID: 8466545998754946887}
   - component: {fileID: 7892689946135797737}
   - component: {fileID: 6737026062468588621}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CircleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

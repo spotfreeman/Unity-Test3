@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     // PLAYER
     [Header("PLAYER")]
+
+    [SerializeField] public string name;
     [SerializeField] public float maxHealth;
     [SerializeField] public float health;
 

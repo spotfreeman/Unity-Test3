@@ -8,6 +8,7 @@ public class TeleportsLevels : MonoBehaviour
     public SpriteRenderer spriteTeleport;
 
     [SerializeField] public bool teleportOne;
+    [SerializeField] public bool teleportTwo;
 
 
     private void Start()
@@ -29,5 +30,9 @@ public class TeleportsLevels : MonoBehaviour
         {
             spriteTeleport.color = Color.red;
         }
+
+        
+
+
     }
 }
