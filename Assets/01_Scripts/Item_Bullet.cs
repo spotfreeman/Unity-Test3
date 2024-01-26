@@ -6,7 +6,7 @@ using TMPro;
 
 public class Item_Bullet : MonoBehaviour
 {
-    [SerializeField] public TMP_Text textItem;
+    
     private bool pickItem;
 
     [SerializeField] private float bulletsTaken;
@@ -14,7 +14,7 @@ public class Item_Bullet : MonoBehaviour
 
     private void Start()
     {
-        textItem.gameObject.SetActive(false);
+       
     }
 
     private void Update()
@@ -29,7 +29,7 @@ public class Item_Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            textItem.gameObject.SetActive(true);
+        
             pickItem = true;
         }
     }
@@ -38,7 +38,7 @@ public class Item_Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            textItem.gameObject.SetActive(false);
+            
             pickItem = false;
         }
     }

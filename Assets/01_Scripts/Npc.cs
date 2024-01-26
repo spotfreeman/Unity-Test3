@@ -13,13 +13,21 @@ public class Npc : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Player Entry");
-        spriteNpc.color = Color.yellow;
+        if( collision.CompareTag("Player"))
+        {
+            
+            spriteNpc.color = Color.yellow;
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Player Exit");
-        spriteNpc.color = Color.green;
+        if(collision.CompareTag("Player"))
+        {
+            
+            spriteNpc.color = Color.green;
+        }
+
     }
 }

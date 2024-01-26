@@ -472,6 +472,8 @@ GameObject:
   - component: {fileID: 1771977942}
   - component: {fileID: 1771977941}
   - component: {fileID: 1771977945}
+  - component: {fileID: 1771977947}
+  - component: {fileID: 1771977946}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -575,6 +577,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3eddc955c9f34d61b0b4cdf74ff7bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1771977946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771977940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ab226c044b84d35b16ce0bc6919072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1771977947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771977940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aca7da0a373f4807af63fbafc65b20c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicControl: 0
+  soundControl: 0
+  name: 
+  maxHealth: 0
+  health: 0
+  moveSpeed: 0
+  attackSpeed: 0
+  attackMelee: 0
+  damageMelee: 0
+  damageRange: 0
+  bulletsOne: 0
+  bulletsTwo: 0
+  bulletsThree: 0
+  EntradaOculta: 1
+  PasajesLaberinticos: 1
+  SalasDePruebas: 1
+  GuardianesAntiguos: 1
+  CamarasDeSacrificio: 1
+  CamaraDelNigromante: 1
 --- !u!1 &1778026671
 GameObject:
   m_ObjectHideFlags: 0
