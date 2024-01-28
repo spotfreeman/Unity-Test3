@@ -18,7 +18,7 @@ public class PastoEfecto : MonoBehaviour
         {
             animator.SetTrigger("ActivateAnimation");
             particleSystem.Play();
-            Debug.Log("Toca Pasto");
+            
         }
         
     }
