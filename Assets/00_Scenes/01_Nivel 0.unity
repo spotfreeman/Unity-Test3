@@ -1028,8 +1028,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.04335001, y: 0.11680004, z: 0}
-    m_Extent: {x: 0.83935, y: 0.9288, z: 0}
+    m_Center: {x: 0.038900018, y: 0.11855, z: 0}
+    m_Extent: {x: 0.8362, y: 0.92015, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2272,8 +2272,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.009050012, y: 0.034449995, z: 0}
-    m_Extent: {x: 0.81285, y: 0.88355, z: 0}
+    m_Center: {x: 0.012549996, y: 0.034350008, z: 0}
+    m_Extent: {x: 0.81885, y: 0.88105, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -39897,8 +39897,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.011000007, y: 0.034049988, z: 0}
-    m_Extent: {x: 0.81589997, y: 0.88225, z: 0}
+    m_Center: {x: 0.014149994, y: 0.02915001, z: 0}
+    m_Extent: {x: 0.81775, y: 0.88215, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -42033,9 +42033,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timesPlayed: 0
+  slotActive: 0
   musicControl: 0
   soundControl: 0
-  name: 
   maxHealth: 0
   health: 0
   moveSpeed: 0
@@ -42043,9 +42043,14 @@ MonoBehaviour:
   attackMelee: 0
   damageMelee: 0
   damageRange: 0
+  weaponOne_Enable: 0
+  weaponOne_Bullets: 0
+  weaponOne_ColdDown: 0
+  weaponOne_Damage: 0
   bulletsOne: 0
   bulletsTwo: 0
   bulletsThree: 0
+  gold: 0
   EntradaOculta: 1
   PasajesLaberinticos: 1
   SalasDePruebas: 1
@@ -42503,6 +42508,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71bfbfab97d3f43298798e22c34d9dfd, type: 3}
+--- !u!1001 &5595891925775608193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1055805938784272732, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055805938784272732, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055805938784272732, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055805938784272732, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055805938784272732, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055805938784272732, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055805938784272732, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055805938784272732, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055805938784272732, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1055805938784272732, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1622140527994013018, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_Name
+      value: PortalOne_Enable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5477055365299792886, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_Name
+      value: TeleportOptimizer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111564566774534477, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
+      propertyPath: m_Name
+      value: PortalOne_Disable
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2d6fc2f8fc5b24f7195fb3a799d5df50, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -42526,3 +42596,4 @@ SceneRoots:
   - {fileID: 1716872834}
   - {fileID: 935330796}
   - {fileID: 1535422065}
+  - {fileID: 5595891925775608193}

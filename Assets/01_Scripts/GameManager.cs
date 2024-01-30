@@ -34,10 +34,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float damageRange;
 
     [Header("BULLETS")]
+    // Nueva Estructura
+    [SerializeField] public int weaponOne_Enable;
+    [SerializeField] public float weaponOne_Bullets;
+    [SerializeField] public float weaponOne_ColdDown;
+    [SerializeField] public float weaponOne_Damage;
+ 
+    // Antigua estructura
     [SerializeField] public float bulletsOne;
     [SerializeField] public float bulletsTwo;
     [SerializeField] public float bulletsThree;
 
+    [SerializeField] public float gold;
 
     // BOSS
     [Header("BOSS")]
@@ -102,8 +110,7 @@ public class GameManager : MonoBehaviour
             moveSpeed = PlayerPrefs.GetFloat("SlotB-MoveSpeed");
         }
 
-
-
+        
     }
 
 

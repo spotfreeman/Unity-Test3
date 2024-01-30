@@ -30,9 +30,6 @@ public class PlayerItems : MonoBehaviour
 
     public int weaponActive;
 
-    private int slotA;
-    private int slotB;
-
     private void Start()
     {
         //    textBullet = GetComponent<TextMeshProUGUI>();
