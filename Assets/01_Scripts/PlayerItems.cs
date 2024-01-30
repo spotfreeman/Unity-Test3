@@ -30,7 +30,8 @@ public class PlayerItems : MonoBehaviour
 
     public int weaponActive;
 
-
+    private int slotA;
+    private int slotB;
 
     private void Start()
     {
@@ -140,6 +141,7 @@ public class PlayerItems : MonoBehaviour
     {
         health -= healthDamage;
     }
+
 
 
 

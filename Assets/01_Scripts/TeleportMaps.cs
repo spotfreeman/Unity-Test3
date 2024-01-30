@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
 
 public class TeleportMaps : MonoBehaviour
 {
-
     [SerializeField] public int level;
     [SerializeField] public bool levelBool;
     [SerializeField] private SpriteRenderer objeto;

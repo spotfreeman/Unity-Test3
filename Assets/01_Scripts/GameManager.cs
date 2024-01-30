@@ -8,15 +8,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    // GLOBALES
+    [Header("GLOBALES")]
+    [SerializeField] public float timesPlayed;
+    [SerializeField] public int slotActive;
+
     // OPTIONS
     [Header ("OPTIONS")]
     [SerializeField] private float musicControl;
     [SerializeField] private float soundControl;
+    
 
     // PLAYER
     [Header("PLAYER")]
-
-    [SerializeField] public string name;
     [SerializeField] public float maxHealth;
     [SerializeField] public float health;
 
@@ -58,6 +62,50 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        timesPlayed = PlayerPrefs.GetFloat("TimesPlayed");
+
+        if (timesPlayed == 0)
+        {
+            PlayerPrefs.SetFloat("SlotA-Health", 30);
+            PlayerPrefs.SetFloat("SlotA-MaxHealth", 40);
+            PlayerPrefs.SetFloat("SlotA-MoveSpeed", 2);
+
+            PlayerPrefs.SetFloat("SlotB-Health", 50);
+            PlayerPrefs.SetFloat("SlotB-MaxHealth", 60);
+            PlayerPrefs.SetFloat("SlotB-MoveSpeed", 2);
+
+            timesPlayed++;
+
+            PlayerPrefs.SetFloat("TimesPlayed", timesPlayed);
+
+        }
+        else
+        {
+            timesPlayed++;
+            PlayerPrefs.SetFloat("TimesPlayed", timesPlayed);
+        }
+
+
+        slotActive = PlayerPrefs.GetInt("SlotActive");
+        if (slotActive == 1)
+        {
+            health = PlayerPrefs.GetFloat("SlotA-Health");
+            maxHealth = PlayerPrefs.GetFloat("SlotA-MaxHealth");
+            moveSpeed = PlayerPrefs.GetFloat("SlotA-MoveSpeed");
+        }
+        if (slotActive == 2)
+        {
+            health = PlayerPrefs.GetFloat("SlotB-Health");
+            maxHealth = PlayerPrefs.GetFloat("SlotB-MaxHealth");
+            moveSpeed = PlayerPrefs.GetFloat("SlotB-MoveSpeed");
+        }
+
+
+
+    }
+
 
     // Funciones de actualizacion
 
@@ -93,4 +141,44 @@ public class GameManager : MonoBehaviour
 
 
 
+
+    public void LoadDataSlotA()
+    {
+        slotActive = 1;
+        PlayerPrefs.SetInt("SlotActive", slotActive);
+        health = PlayerPrefs.GetFloat("SlotA-Health");
+        maxHealth = PlayerPrefs.GetFloat("SlotA-MaxHealth");
+        moveSpeed = PlayerPrefs.GetFloat("SlotA-MoveSpeed");
+    }
+
+    public void LoadDataSlotB()
+    {
+        slotActive = 2;
+        PlayerPrefs.SetInt("SlotActive", slotActive);
+        health = PlayerPrefs.GetFloat("SlotB-Health");
+        maxHealth = PlayerPrefs.GetFloat("SlotB-MaxHealth");
+        moveSpeed = PlayerPrefs.GetFloat("SlotB-MoveSpeed");
+    }
+
+    public void ResetDataSlotA()
+    {
+        slotActive = 1;
+        PlayerPrefs.SetFloat("SlotA-Health", 10);
+        PlayerPrefs.SetFloat("SlotA-MaxHealth", 10);
+        PlayerPrefs.SetFloat("SlotA-MoveSpeed", 2);
+        health = PlayerPrefs.GetFloat("SlotA-Health");
+        maxHealth = PlayerPrefs.GetFloat("SlotA-MaxHealth");
+        moveSpeed = PlayerPrefs.GetFloat("SlotA-MoveSpeed");
+    }
+
+    public void ResetDataSlotB()
+    {
+        slotActive = 2;
+        PlayerPrefs.SetFloat("SlotB-Health", 20);
+        PlayerPrefs.SetFloat("SlotB-MaxHealth", 20);
+        PlayerPrefs.SetFloat("SlotB-MoveSpeed", 3);
+        health = PlayerPrefs.GetFloat("SlotB-Health");
+        maxHealth = PlayerPrefs.GetFloat("SlotB-MaxHealth");
+        moveSpeed = PlayerPrefs.GetFloat("SlotB-MoveSpeed");
+    }
 }
