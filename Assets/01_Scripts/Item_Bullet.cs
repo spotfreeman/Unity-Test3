@@ -8,14 +8,9 @@ public class Item_Bullet : MonoBehaviour
 {
     
     private bool pickItem;
+    [SerializeField] public float bulletsTaken;
+    
 
-    [SerializeField] private float bulletsTaken;
-    [SerializeField] private PlayerItems playeritem;
-
-    private void Start()
-    {
-       
-    }
 
     private void Update()
     {
@@ -29,7 +24,8 @@ public class Item_Bullet : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-        
+            // Opcion de colocar texto
+
             pickItem = true;
         }
     }
@@ -45,7 +41,7 @@ public class Item_Bullet : MonoBehaviour
 
     void Pick()
     {
-        playeritem.AllBullets(bulletsTaken);
+        GameManager.Instance.WeaponOneAdd(bulletsTaken);
         Destroy(gameObject);
     }
 }

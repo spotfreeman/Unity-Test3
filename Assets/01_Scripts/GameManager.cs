@@ -29,17 +29,27 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float attackSpeed;
     [SerializeField] public float attackMelee;
 
-
     [SerializeField] public float damageMelee;
     [SerializeField] public float damageRange;
 
-    [Header("BULLETS")]
+    [Header("Weapon Stats")]
     // Nueva Estructura
+    [Header("Weapon One")]
     [SerializeField] public int weaponOne_Enable;
     [SerializeField] public float weaponOne_Bullets;
     [SerializeField] public float weaponOne_ColdDown;
     [SerializeField] public float weaponOne_Damage;
- 
+
+    [Header("Weapon Two")]
+    [SerializeField] public int weaponTwo_Enable;
+    [SerializeField] public float weaponTwo_Bullets;
+
+    [Header("Weapon Three")]
+    [SerializeField] public int weaponThree_Enable;
+    [SerializeField] public float weaponThree_Bullets;
+
+
+
     // Antigua estructura
     [SerializeField] public float bulletsOne;
     [SerializeField] public float bulletsTwo;
@@ -117,15 +127,18 @@ public class GameManager : MonoBehaviour
     // Funciones de actualizacion
 
     // Arma uno
-
-    public void AddBulletOne(float value)
+    public void WeaponOneEnable()
     {
-        bulletsOne += value;
+
+    }
+    public void WeaponOneAdd(float value)
+    {
+        weaponOne_Bullets += value;
     }
 
-    public void ShootBullerOne(float value)
+    public void WeaponOneRest(float value)
     {
-        bulletsOne -= value;
+        weaponOne_Bullets -= value;
     }
 
 

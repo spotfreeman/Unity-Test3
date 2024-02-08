@@ -28,4 +28,6 @@ public class Teleport : MonoBehaviour
             portal_one_object_disable.SetActive(true);
         }
     }
+
+
 }
