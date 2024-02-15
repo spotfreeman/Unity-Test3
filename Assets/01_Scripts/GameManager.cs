@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float musicControl;
     [SerializeField] private float soundControl;
     
-
     // PLAYER
     [Header("PLAYER")]
     [SerializeField] public float maxHealth;
@@ -48,13 +47,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int weaponThree_Enable;
     [SerializeField] public float weaponThree_Bullets;
 
-
-
-    // Antigua estructura
-    [SerializeField] public float bulletsOne;
-    [SerializeField] public float bulletsTwo;
-    [SerializeField] public float bulletsThree;
-
+    [Header("Items ")]
     [SerializeField] public float gold;
 
     // BOSS
@@ -127,10 +120,11 @@ public class GameManager : MonoBehaviour
     // Funciones de actualizacion
 
     // Arma uno
-    public void WeaponOneEnable()
+    public void WeaponOneEnable(int value)
     {
-
+        weaponOne_Enable = value;
     }
+
     public void WeaponOneAdd(float value)
     {
         weaponOne_Bullets += value;

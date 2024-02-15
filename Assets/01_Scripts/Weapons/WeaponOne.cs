@@ -4,43 +4,91 @@ using UnityEngine;
 
 public class WeaponOne : MonoBehaviour
 {
+    [SerializeField] public int enable;
+    [SerializeField] public float bulletShoot;
+    [SerializeField] public float damage;
 
-    public float bulletShoot;
-    public float coldDownCounter;
+    [SerializeField] public float coldDown_Counter;
+    [SerializeField] public float coldDown_Limit;
+
+
+    // Creando disparo basico
+    public GameObject projectilePrefab;
+    public float shootForce = 1f;
+    // end
+
 
     void Start()
     {
-        
+        bulletShoot = GameManager.Instance.weaponOne_Bullets;
+        coldDown_Counter = GameManager.Instance.weaponOne_ColdDown;
+        damage = GameManager.Instance.weaponOne_Damage;
+        coldDown_Limit = GameManager.Instance.weaponOne_ColdDown;
     }
 
    
     void Update()
     {
-        int enable = GameManager.Instance.weaponOne_Enable;
-        float bullets = GameManager.Instance.weaponOne_Bullets;
-        float coldDown = GameManager.Instance.weaponOne_ColdDown;
-        float damage = GameManager.Instance.weaponOne_Damage;
+        enable = GameManager.Instance.weaponOne_Enable;
 
-        coldDownCounter = coldDown;
-        coldDownCounter -= Time.fixedDeltaTime ;
-        
-
-        if (Input.GetKeyDown("Fire1") && enable == 1)
+        if ( coldDown_Counter > 0)
         {
-            Debug.Log(" Ejecutar acciones de Weapon ONE");
+            coldDown_Counter -= Time.deltaTime;
+        }
+        else
+        {
+            coldDown_Counter = 0;
+        }
 
-            if ( coldDownCounter < 0 )
+
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if( enable == 1 )
             {
-                
-                if (bullets > 0)
+                Debug.Log(" Arma Habilitada ");
+
+                // Funcion de disparar
+
+                if ( bulletShoot > 0)
                 {
-                    GameManager.Instance.WeaponOneRest(bulletShoot);
-                    coldDownCounter = coldDown;
+                    if( coldDown_Counter <= 0 )
+                    {
+                        Debug.Log(" Disparo! ");
+
+                        coldDown_Counter = coldDown_Limit;
+
+                        Vector3 mousePosition = Input.mousePosition;
+                        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                        Vector2 direction = (worldPosition - transform.position).normalized;
+
+                        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+                        rb.AddForce(direction * shootForce, ForceMode2D.Impulse);
+
+
+
+                    }
+                    else
+                    {
+                        Debug.Log(" Estoy cansado...");
+                    }
                 }
+                else
+                {
+                    Debug.Log(" Sin Balas! ");
+                }
+            }
+            else
+            {
+                Debug.Log(" Arma no habilitada ");
             }
 
             
+
+
         }
+        
     }
 
 
