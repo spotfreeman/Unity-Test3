@@ -7,7 +7,7 @@ using TMPro;
 public class PlayerItems : MonoBehaviour
 {
 
-    public float bullets;
+    [SerializeField] public float bullets;
     [SerializeField] private TextMeshProUGUI textBullet;
 
     public float bulletsRifle;
@@ -45,6 +45,7 @@ public class PlayerItems : MonoBehaviour
 
     private void Update()
     {
+        bullets = GameManager.Instance.weaponOne_Bullets;
         float health = GameManager.Instance.health;
 
         textBullet.text = bullets.ToString("0");

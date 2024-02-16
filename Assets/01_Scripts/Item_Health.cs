@@ -6,15 +6,13 @@ using TMPro;
 
 public class Item_Health : MonoBehaviour
 {
-    [SerializeField] public TMP_Text textItem;
     private bool pickItem;
 
     [SerializeField] private float healthTaken;
-    [SerializeField] private PlayerItems playeritem;
 
     private void Start()
     {
-        textItem.gameObject.SetActive(false);
+       
     }
 
     private void Update()
@@ -29,7 +27,7 @@ public class Item_Health : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            textItem.gameObject.SetActive(true);
+            
             pickItem = true;
         }
     }
@@ -38,14 +36,14 @@ public class Item_Health : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            textItem.gameObject.SetActive(false);
+           
             pickItem = false;
         }
     }
 
     void Pick()
     {
-        playeritem.HealthCount(healthTaken);
+        GameManager.Instance.AddHealth(healthTaken);
         Destroy(gameObject);
     }
 }

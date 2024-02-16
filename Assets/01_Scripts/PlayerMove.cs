@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
     private float movX, movY;
     private Animator animator;
 
+    [SerializeField] ParticleSystem particula;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -29,6 +31,7 @@ public class PlayerMove : MonoBehaviour
         {
             animator.SetFloat("LastX", movX);
             animator.SetFloat("LastY", movY);
+            particula.Play();
         }
         direction = new Vector2(movX, movY).normalized;
     }

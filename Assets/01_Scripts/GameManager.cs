@@ -59,6 +59,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool CamarasDeSacrificio = true;
     [SerializeField] public bool CamaraDelNigromante = true;
 
+    // UI
+
+    [SerializeField] private Barradevida barra;
 
     private void Awake()
     {
@@ -75,6 +78,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        barra.IniciarBarra(maxHealth);
+
         timesPlayed = PlayerPrefs.GetFloat("TimesPlayed");
 
         if (timesPlayed == 0)
@@ -136,21 +141,29 @@ public class GameManager : MonoBehaviour
     }
 
 
+    private void Update()
+    {
+        barra.CambiarVidaActual(health);
+        barra.CambiarVidaMaxima(maxHealth);
+    }
     // Energia jugador
 
     public void AddHealth(float value)
     {
+        
         health += value;
         if( health >= maxHealth )
         {
             health = maxHealth;
         }
+        barra.CambiarVidaActual(health);
 
     }
 
     public void DamageHealth(float value)
     {
         health -= value;
+        barra.CambiarVidaActual(health);
     }
 
 

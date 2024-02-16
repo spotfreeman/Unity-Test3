@@ -32,13 +32,14 @@ public class PlayerAction : MonoBehaviour
 
     void PrimaryAction()
     {
-        animator.SetBool("Attack_Up", true);
+        Debug.Log("Primary Action");
     }
 
     void SecondAction()
     {
         Debug.Log("Second Action");
     }
+
     void DragAction()
     {
         Debug.Log("Take Item");
