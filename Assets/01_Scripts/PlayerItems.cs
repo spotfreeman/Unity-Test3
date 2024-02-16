@@ -46,6 +46,8 @@ public class PlayerItems : MonoBehaviour
     private void Update()
     {
         bullets = GameManager.Instance.weaponOne_Bullets;
+
+
         float health = GameManager.Instance.health;
 
         textBullet.text = bullets.ToString("0");
