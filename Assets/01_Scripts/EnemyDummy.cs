@@ -6,15 +6,24 @@ public class EnemyDummy : MonoBehaviour
 {
     private bool hasBeenHit = false;
     public float recoilForce = 5f; // Ajusta la fuerza de retroceso según tus necesidades
+    [SerializeField] private float health;
 
 
+    private void Update()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!hasBeenHit)
         {
-            if (collision.gameObject.CompareTag("shoot"))
+            if (collision.gameObject.CompareTag("Shoot"))
             {
+                health--;
                 // Cambiar de color por un segundo y luego volver a la normalidad usando una corrutina
                 StartCoroutine(ChangeColorAndApplyRecoil(Color.red, 1f, collision.transform.position));
             }
