@@ -190,7 +190,7 @@ public class GameManager : MonoBehaviour
     public void ResetDataSlotA()
     {
         slotActive = 1;
-        PlayerPrefs.SetFloat("SlotA-Health", 10);
+        PlayerPrefs.SetFloat("SlotA-Health", 3);
         PlayerPrefs.SetFloat("SlotA-MaxHealth", 10);
         PlayerPrefs.SetFloat("SlotA-MoveSpeed", 2);
         health = PlayerPrefs.GetFloat("SlotA-Health");
@@ -201,9 +201,9 @@ public class GameManager : MonoBehaviour
     public void ResetDataSlotB()
     {
         slotActive = 2;
-        PlayerPrefs.SetFloat("SlotB-Health", 20);
-        PlayerPrefs.SetFloat("SlotB-MaxHealth", 20);
-        PlayerPrefs.SetFloat("SlotB-MoveSpeed", 3);
+        PlayerPrefs.SetFloat("SlotB-Health", 5);
+        PlayerPrefs.SetFloat("SlotB-MaxHealth", 10);
+        PlayerPrefs.SetFloat("SlotB-MoveSpeed", 2);
         health = PlayerPrefs.GetFloat("SlotB-Health");
         maxHealth = PlayerPrefs.GetFloat("SlotB-MaxHealth");
         moveSpeed = PlayerPrefs.GetFloat("SlotB-MoveSpeed");

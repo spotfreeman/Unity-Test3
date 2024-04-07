@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
 
     [SerializeField] private Vector2 direction;
+    [SerializeField] public float knockback = 3f;
 
     private Rigidbody2D playerRb;
     private float movX, movY;
@@ -41,5 +42,18 @@ public class PlayerMove : MonoBehaviour
         float moveSpeed = GameManager.Instance.moveSpeed;
 
         playerRb.MovePosition(playerRb.position + direction * moveSpeed * Time.fixedDeltaTime);
+    }
+
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Debug.Log("Collision! ");
+            Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
+            playerRb.AddForce(knockbackDirection * knockback, ForceMode2D.Impulse);
+            Debug.Log("Fin del Codigo");
+        }
+        
     }
 }
