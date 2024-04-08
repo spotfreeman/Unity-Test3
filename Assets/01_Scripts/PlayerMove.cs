@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-
     [SerializeField] private Vector2 direction;
-    [SerializeField] public float knockback = 3f;
+    [SerializeField] public float knockback = 10f;
 
     private Rigidbody2D playerRb;
     private float movX, movY;
@@ -14,21 +13,28 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] ParticleSystem particula;
 
+    [SerializeField] private bool stateMove;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody2D>();
+
+        stateMove = true;
     }
 
     private void Update()
     {
-        movX = Input.GetAxisRaw("Horizontal");
-        movY = Input.GetAxisRaw("Vertical");
+        if (stateMove == true)
+        {
+            movX = Input.GetAxisRaw("Horizontal");
+            movY = Input.GetAxisRaw("Vertical");
+        }
 
         animator.SetFloat("MovX", movX);
         animator.SetFloat("MovY", movY);
 
-        if(movX != 0 || movY != 0)
+        if (movX != 0 || movY != 0)
         {
             animator.SetFloat("LastX", movX);
             animator.SetFloat("LastY", movY);
@@ -44,16 +50,23 @@ public class PlayerMove : MonoBehaviour
         playerRb.MovePosition(playerRb.position + direction * moveSpeed * Time.fixedDeltaTime);
     }
 
-
-    public void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && stateMove == true)
         {
-            Debug.Log("Collision! ");
+            Debug.Log("Collision! " + stateMove);
+            stateMove = false;
             Vector2 knockbackDirection = (transform.position - collision.transform.position).normalized;
             playerRb.AddForce(knockbackDirection * knockback, ForceMode2D.Impulse);
-            Debug.Log("Fin del Codigo");
+            Invoke("ResetStateMove", 0.5f); // Llama a ResetStateMove después de 0.5 segundos
         }
-        
+    }
+
+    // Restablece stateMove a true después de un tiempo
+    private void ResetStateMove()
+    {
+        stateMove = true;
+        Debug.Log("Fin del Codigo");
     }
 }
+
